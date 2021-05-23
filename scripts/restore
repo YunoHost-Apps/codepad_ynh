@@ -90,6 +90,7 @@ ynh_script_progression --message="Reinstalling dependencies..." --time --weight=
 
 # Install nodejs
 ynh_install_nodejs --nodejs_version=$NODEJS_VERSION
+ynh_npm install --prod
 
 #=================================================
 # RESTORE VARIOUS FILES
