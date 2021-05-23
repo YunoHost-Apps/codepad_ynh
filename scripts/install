@@ -105,8 +105,6 @@ ynh_script_progression --message="Installing dependencies..." --time --weight=1
 
 # Install nodejs
 ynh_install_nodejs --nodejs_version=$NODEJS_VERSION
-
-# Install app modules using npm
 ynh_npm install --prod
 
 #=================================================
