@@ -20,7 +20,6 @@ ynh_abort_if_errors
 # RETRIEVE ARGUMENTS FROM THE MANIFEST
 #=================================================
 
-ynh_use_nodejs
 domain=$YNH_APP_ARG_DOMAIN
 path_url=$YNH_APP_ARG_PATH
 is_public=$YNH_APP_ARG_IS_PUBLIC
@@ -104,6 +103,7 @@ ynh_script_progression --message="Installing dependencies..." --time --weight=1
 ###		- And the section "UPGRADE DEPENDENCIES" in the upgrade script
 
 # Install nodejs
+ynh_use_nodejs
 ynh_install_nodejs --nodejs_version=$NODEJS_VERSION
 ynh_npm install --prod
 
