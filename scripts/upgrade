@@ -16,10 +16,10 @@ ynh_script_progression --message="Loading installation settings..." --time --wei
 
 app=$YNH_APP_INSTANCE_NAME
 
+ynh_use_nodejs
 domain=$(ynh_app_setting_get --app=$app --key=domain)
 path_url=$(ynh_app_setting_get --app=$app --key=path)
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
-NODEJS_VERSION=14
 
 #=================================================
 # CHECK VERSION
@@ -144,6 +144,7 @@ ynh_script_progression --message="Upgrading dependencies..." --time --weight=1
 
 # Upgrade nodejs
 ynh_install_nodejs --nodejs_version=$NODEJS_VERSION
+ynh_npm install --prod
 
 #=================================================
 # SPECIFIC UPGRADE
