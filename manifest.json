@@ -16,7 +16,7 @@
         "userdoc": "https://yunohost.org/apps",
         "code": "https://github.com/Stylix58/codepad"
     },
-    "license": "free",
+    "license": "MIT",
     "maintainer": {
         "name": "Stylix58",
         "email": "lateman-jpeg@outlook.fr"
