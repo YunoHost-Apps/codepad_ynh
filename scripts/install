@@ -20,7 +20,6 @@ ynh_abort_if_errors
 # RETRIEVE ARGUMENTS FROM THE MANIFEST
 #=================================================
 
-ynh_use_nodejs
 domain=$YNH_APP_ARG_DOMAIN
 path_url=$YNH_APP_ARG_PATH
 is_public=$YNH_APP_ARG_IS_PUBLIC
@@ -104,9 +103,8 @@ ynh_script_progression --message="Installing dependencies..." --time --weight=1
 ###		- And the section "UPGRADE DEPENDENCIES" in the upgrade script
 
 # Install nodejs
+ynh_use_nodejs
 ynh_install_nodejs --nodejs_version=$NODEJS_VERSION
-
-# Install app modules using npm
 ynh_npm install --prod
 
 #=================================================
@@ -240,14 +238,6 @@ ynh_script_progression --message="Starting a systemd service..." --time --weight
 
 # Start a systemd service
 ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$app/$app.log"
-
-#=================================================
-# SETUP FAIL2BAN
-#=================================================
-ynh_script_progression --message="Configuring Fail2Ban..." --time --weight=1
-
-# Create a dedicated Fail2Ban config
-ynh_add_fail2ban_config --logpath="/var/log/nginx/${domain}-error.log" --failregex="Regex to match into the log for a failed login"
 
 #=================================================
 # SETUP SSOWAT

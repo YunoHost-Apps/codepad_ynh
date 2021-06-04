@@ -4,12 +4,17 @@ After=network.target
 
 [Service]
 Type=simple
+Environment=NODE_ENV=production
+Environment=NODE_CONFIG_DIR=__FINALPATH__/config
 User=__APP__
 Group=__APP__
+ExecStart=__YNH_NODE__ __FINALPATH__/server.js
 WorkingDirectory=__FINALPATH__/
-ExecStart=node __FINALPATH__/server.js
-StandardOutput=append:/var/log/__APP__/__APP__.log
-StandardError=inherit
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=__APP__
+Restart=always
+
 
 [Install]
 WantedBy=multi-user.target

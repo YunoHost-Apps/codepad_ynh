@@ -73,15 +73,6 @@ chmod -R o-rwx "$final_path"
 chown -R $app:www-data "$final_path"
 
 #=================================================
-# RESTORE FAIL2BAN CONFIGURATION
-#=================================================
-ynh_script_progression --message="Restoring the Fail2Ban configuration..." --time --weight=1
-
-ynh_restore_file "/etc/fail2ban/jail.d/$app.conf"
-ynh_restore_file "/etc/fail2ban/filter.d/$app.conf"
-ynh_systemd_action --action=restart --service_name=fail2ban
-
-#=================================================
 # SPECIFIC RESTORATION
 #=================================================
 # REINSTALL DEPENDENCIES
@@ -89,7 +80,9 @@ ynh_systemd_action --action=restart --service_name=fail2ban
 ynh_script_progression --message="Reinstalling dependencies..." --time --weight=1
 
 # Install nodejs
+ynh_use_nodejs
 ynh_install_nodejs --nodejs_version=$NODEJS_VERSION
+ynh_npm install --prod
 
 #=================================================
 # RESTORE VARIOUS FILES
