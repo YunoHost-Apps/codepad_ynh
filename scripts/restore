@@ -80,9 +80,11 @@ chown -R $app:www-data "$final_path"
 ynh_script_progression --message="Reinstalling dependencies..." --time --weight=1
 
 # Install nodejs
-ynh_use_nodejs
 ynh_install_nodejs --nodejs_version=$NODEJS_VERSION
-ynh_npm install --prod
+pushd "$final_path"
+	ynh_use_nodejs
+	ynh_exec_warn_less sudo -u $app env $ynh_node_load_PATH npm install --prod
+popd
 
 #=================================================
 # RESTORE VARIOUS FILES
