@@ -13,7 +13,7 @@ Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour
 
 Un bloc-notes de code cool.
 
-**Version incluse :** 1.0.1~ynh1
+**Version incluse :** 1.0.2~ynh1
 
 
 
