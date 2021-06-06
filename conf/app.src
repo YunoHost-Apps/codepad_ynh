@@ -1,5 +1,5 @@
-SOURCE_URL=https://github.com/Stylix58/codepad/archive/refs/tags/1.0.0.tar.gz
-SOURCE_SUM=237bbb4d6f9e9dd7b7bb3893f4995e8db148a5870b0e371c855891e76986caa2
+SOURCE_URL=https://github.com/Stylix58/codepad/archive/refs/tags/1.0.2.tar.gz
+SOURCE_SUM=b677d7a278293358a7402a7919b5dc8b6aa6eb6ca0face66074440876cf619b9
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=tar.gz
 SOURCE_IN_SUBDIR=true
