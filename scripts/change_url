@@ -13,6 +13,8 @@ source /usr/share/yunohost/helpers
 # RETRIEVE ARGUMENTS
 #=================================================
 
+port=$(ynh_find_port --port=8095)
+
 old_domain=$YNH_APP_OLD_DOMAIN
 old_path=$YNH_APP_OLD_PATH
 
@@ -104,12 +106,6 @@ then
 	# Store file checksum for the new config file location
 	ynh_store_file_checksum --file="/etc/nginx/conf.d/$new_domain.d/$app.conf"
 fi
-
-#=================================================
-# SPECIFIC MODIFICATIONS
-#=================================================
-# ...
-#=================================================
 
 #=================================================
 # GENERIC FINALISATION
