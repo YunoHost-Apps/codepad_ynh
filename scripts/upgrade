@@ -20,6 +20,7 @@ domain=$(ynh_app_setting_get --app=$app --key=domain)
 path_url=$(ynh_app_setting_get --app=$app --key=path)
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 admin=$(ynh_app_setting_get --app=$app --key=admin)
+port=$(ynh_find_port --port=1992)
 
 #=================================================
 # CHECK VERSION
@@ -150,7 +151,8 @@ ynh_npm install --prod
 #=================================================
 # SPECIFIC UPGRADE
 #=================================================
-# ...
+# UPGRADE PORT
+ynh_app_setting_set --app=$app --key=port --value=$port
 #=================================================
 
 #=================================================
