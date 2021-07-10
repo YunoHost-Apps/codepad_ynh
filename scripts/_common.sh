@@ -6,6 +6,7 @@
 
 # dependencies used by the app
 pkg_dependencies=""
+
 NODEJS_VERSION=14
 
 #=================================================
