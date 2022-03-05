@@ -15,7 +15,8 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 ## Overview
 
-A cool code notepad.
+:exclamation: Upstream app no more exists
+
 
 **Shipped version:** 1.0.2~ynh1
 

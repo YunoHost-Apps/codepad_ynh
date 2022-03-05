@@ -11,7 +11,8 @@ Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour
 
 ## Vue d'ensemble
 
-Un bloc-notes de code cool.
+:exclamation: Upstream app no more exists
+
 
 **Version incluse :** 1.0.2~ynh1
 
